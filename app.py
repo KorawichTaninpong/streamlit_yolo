@@ -11,9 +11,9 @@ st.title("Student Detection")
 
 st.write("Upload your Image...")
 
-#model = torch.hub.load('./yolov5', 'custom', path='./last.pt', source='local')
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/last.pt', force_reload=True)
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/last.pt')
+#model = torch.hub.load('./yolov5', 'custom', path='./best.pt', source='local')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt', force_reload=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt')
 
 uploaded_file = st.file_uploader("Choose .jpg pic ...", type="jpg")
 if uploaded_file is not None:
@@ -33,8 +33,8 @@ if uploaded_file is not None:
   #labels, cord_thres = detect_class[:, :].numpy(), detect_class[:, :].numpy()
   
   #     xmin       ymin    xmax        ymax          confidence  class    name
-  #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      turtle
-  
+  #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      Wrong Spot
+  #0  148.605362   0.0    1022.523743  818.618286    0.813045      2      Students
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
   
